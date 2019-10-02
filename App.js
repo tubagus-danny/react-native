@@ -1,41 +1,24 @@
-import React from 'react';
-import {StyleSheet, SafeAreaView, FlatList} from 'react-native';
-import ListItem, {Separator} from './src/ListItem';
+import React, {Component} from 'react';
+import {createAppContainer} from 'react-navigation';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
+import {Drawer} from './src/configs/routes';
+import {View, StyleSheet} from 'react-native';
 
-export default class App extends React.Component {
+const NavPage = createAppContainer(Drawer);
+
+export default class App extends Component {
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <FlatList
-          data={goods}
-          keyExtractor={item => item.id}
-          renderItem={({item}) => (
-            <ListItem
-              {...item}
-              // eslint-disable-next-line no-alert
-              onSwipeFromLeft={() => alert('swiped from left')}
-              // eslint-disable-next-line no-alert
-              onRightPress={() => alert('pressed right!')}
-            />
-          )}
-          itemSeparatorComponent={() => <Separator />}
-        />
-      </SafeAreaView>
+      <View style={styles.container}>
+        <NavPage />
+      </View>
     );
   }
 }
 
-const goods = [
-  {id: '0', text: 'Soap'},
-  {id: '1', text: 'Shampoo'},
-  {id: '2', text: 'Conditioner'},
-  {id: '3', text: 'Toothpaste'},
-  {id: '4', text: 'Tooth Brush'},
-];
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF',
+  },
+});

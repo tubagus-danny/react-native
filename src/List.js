@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 import {Button} from 'react-native-elements';
 
-export default class Home extends Component {
+export default class List extends Component {
   render() {
     return (
       <View>
-        <Text> ini home </Text>
+        <Text> ini list </Text>
         <Button
-          title="Go to List"
-          onPress={() => this.props.navigation.navigate('List')}
+          title="Go to Home"
+          onPress={() => this.props.navigation.navigate('Home')}
         />
       </View>
     );

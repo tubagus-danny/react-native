@@ -5,8 +5,8 @@ import ListItem, {Separator} from './src/ListItem';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
-  }
+    backgroundColor: '#fff',
+  },
 });
 
 export default class App extends React.Component {
@@ -19,7 +19,9 @@ export default class App extends React.Component {
           renderItem={({item}) => (
             <ListItem
               {...item}
+              // eslint-disable-next-line no-alert
               onSwipeFromLeft={() => alert('swiped from left')}
+              // eslint-disable-next-line no-alert
               onRightPress={() => alert('pressed right!')}
             />
           )}
